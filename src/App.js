@@ -29,11 +29,14 @@ class App extends React.Component {
 
   editCard = (poem, content) => {
     console.log(poem, content)
-    const front = this.state.poems.slice(0,poem.id-1)
-    const back = this.state.poems.slice(poem.id)
+    const index = this.state.poems.findIndex(poem1 => poem1 === poem)
+    console.log(index)
+    
+    const front = this.state.poems.slice(0,index)
+    const back = this.state.poems.slice(index+1)
     poem.content = content 
 
-    console.log([...front, poem, ...back])
+    console.log(front, poem, back)
 
     this.setState({
       poems: [...front, poem, ...back]
