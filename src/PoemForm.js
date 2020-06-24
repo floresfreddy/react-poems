@@ -1,4 +1,5 @@
 import React from 'react';
+import { PoemList } from './PoemList';
 
 
 export class PoemForm extends React.Component{
@@ -14,6 +15,7 @@ export class PoemForm extends React.Component{
 
     handleSubmit = () => {
         // What should we do here?
+        this.props.create(this.state)
     }
 
     render(){
@@ -34,4 +36,4 @@ export class PoemForm extends React.Component{
     }
 
 
-}
+} 
